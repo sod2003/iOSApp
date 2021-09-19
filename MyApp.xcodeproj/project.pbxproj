@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141EC21A26F6333B004E8229 /* tiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141EC21726F6333A004E8229 /* tiger.jpg */; };
+		141EC21B26F6333B004E8229 /* bear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141EC21826F6333A004E8229 /* bear.jpg */; };
+		141EC21C26F6333B004E8229 /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141EC21926F6333B004E8229 /* lion.jpg */; };
 		14817B8F26F3A51800AEA810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14817B8E26F3A51800AEA810 /* AppDelegate.swift */; };
 		14817B9126F3A51800AEA810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14817B9026F3A51800AEA810 /* SceneDelegate.swift */; };
 		14817B9326F3A51800AEA810 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14817B9226F3A51800AEA810 /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141EC21726F6333A004E8229 /* tiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiger.jpg; sourceTree = "<group>"; };
+		141EC21826F6333A004E8229 /* bear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bear.jpg; sourceTree = "<group>"; };
+		141EC21926F6333B004E8229 /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
 		14817B8B26F3A51800AEA810 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14817B8E26F3A51800AEA810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14817B9026F3A51800AEA810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,9 @@
 		14817B8D26F3A51800AEA810 /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
+				141EC21826F6333A004E8229 /* bear.jpg */,
+				141EC21926F6333B004E8229 /* lion.jpg */,
+				141EC21726F6333A004E8229 /* tiger.jpg */,
 				14817B8E26F3A51800AEA810 /* AppDelegate.swift */,
 				14817B9026F3A51800AEA810 /* SceneDelegate.swift */,
 				14817B9226F3A51800AEA810 /* ViewController.swift */,
@@ -128,8 +137,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14817B9B26F3A51900AEA810 /* LaunchScreen.storyboard in Resources */,
+				141EC21C26F6333B004E8229 /* lion.jpg in Resources */,
+				141EC21B26F6333B004E8229 /* bear.jpg in Resources */,
 				14817B9826F3A51900AEA810 /* Assets.xcassets in Resources */,
 				14817B9626F3A51800AEA810 /* Main.storyboard in Resources */,
+				141EC21A26F6333B004E8229 /* tiger.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

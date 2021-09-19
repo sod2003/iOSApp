@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //@IBOutlet weak var sc1: UISegmentedControl!
     @IBOutlet weak var iv1: UIImageView!
     @IBOutlet weak var pc1: UIPageControl!
     
@@ -40,21 +39,5 @@ class ViewController: UIViewController {
             iv1.image = image
         }
     }
-    //    @IBAction func clickSegmentedControl(_ sender: Any) {
-//        let index: Int = sc1.selectedSegmentIndex
-//        if index == 0 {
-//            let image: UIImage = UIImage(imageLiteralResourceName: "lion.jpg")
-//            iv1.image = image
-//        }
-//
-//        if index == 1 {
-//            let image: UIImage = UIImage(imageLiteralResourceName: "tiger.jpg")
-//            iv1.image = image
-//        }
-//
-//        if index == 2 {
-//            let image: UIImage = UIImage(imageLiteralResourceName: "bear.jpg")
-//            iv1.image = image
-//        }
-//    }
+   
 }

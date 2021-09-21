@@ -16,23 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7r-RS-bz9">
-                                <rect key="frame" x="16" y="20" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-mb-IBV">
-                                <rect key="frame" x="16" y="69" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dp-dc-g4Q"/>
-                                </connections>
-                            </button>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daP-gw-BHX">
                                 <rect key="frame" x="16" y="120" width="343" height="527"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -42,13 +25,36 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvO-ks-S8H">
+                                <rect key="frame" x="64" y="35" width="247" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <items>
+                                    <barButtonItem title="Facebook" id="MPe-Fe-n06">
+                                        <connections>
+                                            <action selector="clickButton:" destination="BYZ-38-t0r" id="kl9-6f-cWl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Apple" id="Qiq-PQ-iOb">
+                                        <connections>
+                                            <action selector="clickButton:" destination="BYZ-38-t0r" id="Upx-Xg-ZWM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Google" id="qG4-2I-mPN">
+                                        <connections>
+                                            <action selector="clickButton:" destination="BYZ-38-t0r" id="Bq5-zH-c0B"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="jRa-mb-IBV" id="Bdc-78-3K6"/>
-                        <outlet property="tv1" destination="B7r-RS-bz9" id="e3J-rj-zzy"/>
+                        <outlet property="b1" destination="MPe-Fe-n06" id="G7n-u7-wU7"/>
+                        <outlet property="b2" destination="Qiq-PQ-iOb" id="erm-Ci-l4A"/>
+                        <outlet property="b3" destination="qG4-2I-mPN" id="03y-9A-eSe"/>
+                        <outlet property="toolbar1" destination="jvO-ks-S8H" id="tOg-L2-78N"/>
                         <outlet property="wv1" destination="daP-gw-BHX" id="zx5-H0-HZI"/>
                     </connections>
                 </viewController>
@@ -58,12 +64,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

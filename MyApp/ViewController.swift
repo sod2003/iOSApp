@@ -10,9 +10,10 @@ import WebKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tv1: UITextField!
-    
-    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var toolbar1: UIToolbar!
+    @IBOutlet weak var b1: UIBarButtonItem!
+    @IBOutlet weak var b2: UIBarButtonItem!
+    @IBOutlet weak var b3: UIBarButtonItem!
     
     @IBOutlet weak var wv1: WKWebView!
     
@@ -20,17 +21,16 @@ class ViewController: UIViewController {
     
     var request1: URLRequest! //to create a request
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-            
-        
 
     }
 
-    @IBAction func clickButton(_ sender: Any) {
-        url1 = URL(string: tv1.text!)
+    @IBAction func clickButton(_ sender: UIBarButtonItem) {
+        var string = "http://" + (sender.title?.lowercased())!
+        string += ".com"
+        url1 = URL(string: string)
         
         request1 = URLRequest(url: url1)
         

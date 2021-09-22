@@ -6,36 +6,38 @@
 //
 
 import UIKit
-import WebKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var toolbar1: UIToolbar!
-    @IBOutlet weak var b1: UIBarButtonItem!
-    @IBOutlet weak var b2: UIBarButtonItem!
-    @IBOutlet weak var b3: UIBarButtonItem!
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var label1: UILabel!
     
-    @IBOutlet weak var wv1: WKWebView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var label2: UILabel!
     
-    var url1: URL! // to assign a URL
-    
-    var request1: URLRequest! //to create a request
+    @IBOutlet weak var sc1: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        
     }
 
-    @IBAction func clickButton(_ sender: UIBarButtonItem) {
-        var string = "http://" + (sender.title?.lowercased())!
-        string += ".com"
-        url1 = URL(string: string)
+    @IBAction func handleClick(_ sender: Any) {
         
-        request1 = URLRequest(url: url1)
-        
-        wv1.load(request1)
+        if sc1.selectedSegmentIndex == 0 {
+            
+            view1.isHidden = false
+            view2.isHidden = true
+            
+        } else {
+            
+            view1.isHidden = true
+            view2.isHidden = false
+            
+        }
     }
+    
     
    
 }

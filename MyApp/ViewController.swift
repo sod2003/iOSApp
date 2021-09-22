@@ -9,19 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var sv1: UIScrollView!
-    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var presentButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        sv1.contentSize = CGSize(width: 400, height: 600)
+        self.title = "First View"
         
     }
 
+    @IBAction func click1(_ sender: Any) {
+        
+        
+    }
     
+    @IBAction func presentButtonClick(_ sender: UIButton) {
+        
+    }
     
    
 }

@@ -9,13 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var view1: UIView!
-    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var alertButton: UIButton!
+    @IBOutlet weak var actionButton: UIButton!
     
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var label2: UILabel!
-    
-    @IBOutlet weak var sc1: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +19,34 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func handleClick(_ sender: Any) {
+    @IBAction func clickAlert(_ sender: Any) {
+        let alertButton = UIAlertController(title: "Displaying Alert Message", message: "Enter Message Here", preferredStyle: .alert)
         
-        if sc1.selectedSegmentIndex == 0 {
-            
-            view1.isHidden = false
-            view2.isHidden = true
-            
-        } else {
-            
-            view1.isHidden = true
-            view2.isHidden = false
-            
-        }
+        alertButton.addAction(UIAlertAction(title: "Close", style: .default, handler: {_ in
+            print("Close button clicked")
+            self.view.backgroundColor = .green
+        }))
+        
+        alertButton.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: {_ in
+            print("Signout button clicked")
+            self.view.backgroundColor = .red
+        }))
+        
+        self.present(alertButton, animated: true, completion: nil)
+    }
+    
+    @IBAction func clickAction(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Category Name", message: "Select any options", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Option 1", style: .default, handler: {_ in
+            print("Option 1 selected")
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Option 2", style: .default, handler: {_ in
+            print("Option 2 selected")
+        }))
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     

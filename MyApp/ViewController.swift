@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "First View"
         
+        //self.navigationController?.isNavigationBarHidden = true
+        
     }
 
     @IBAction func click1(_ sender: Any) {

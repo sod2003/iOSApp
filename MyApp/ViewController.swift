@@ -9,26 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var tf1: UITextField!
+    @IBOutlet weak var tf2: UITextField!
     @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var presentButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "First View"
-        
-        //self.navigationController?.isNavigationBarHidden = true
         
     }
 
-    @IBAction func click1(_ sender: Any) {
-        
+    @IBAction func clickButton(_ sender: UIButton) {
         
     }
     
-    @IBAction func presentButtonClick(_ sender: UIButton) {
+    // Code to transfer information to next screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextScreen = segue.destination as! SecondViewController
         
+        nextScreen.string1 = tf1.text
+        nextScreen.string2 = tf2.text
+        nextScreen.string3 = "lion.jpg"
     }
     
    

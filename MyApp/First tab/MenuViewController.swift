@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  MenuViewController.swift
 //  MyApp
 //
 //  Created by Sean O'Dowd on 9/23/21.
@@ -7,20 +7,20 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class MenuViewController: UIViewController {
 
-    
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-        
     }
     
-
+    @IBAction func backClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

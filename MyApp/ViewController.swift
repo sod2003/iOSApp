@@ -6,70 +6,39 @@
 //
 
 import UIKit
+import QuartzCore
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
-    @IBOutlet weak var iv1: UIImageView!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var tf1: UITextField!
+    @IBOutlet weak var label1: UILabel!
     
-    var PhotoLibraryImagePicker1: UIImagePickerController!
-    var CameraImagePicker2: UIImagePickerController!
+    var layer1: CALayer!
+    var layer2: CALayer!
+    var layer3: CALayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        layer1 = tf1.layer
         
+        layer1.cornerRadius = 20
+        layer1.borderColor = UIColor.black.cgColor
+        layer1.borderWidth = 2
+        
+        layer2 = label1.layer
+        
+        layer2.cornerRadius = 10
+        layer2.borderColor = UIColor.red.cgColor
+        layer2.borderWidth = 2
+        
+        layer3 = self.view.layer
+        
+        layer3.borderColor = UIColor.yellow.cgColor
+        layer3.borderWidth = 5
+        layer3.cornerRadius = 10
         
     }
     
-    @IBAction func photoClick(_ sender: UIButton) {
-        
-        // Access Photo Library
-        PhotoLibraryImagePicker1 = UIImagePickerController()
-        
-        PhotoLibraryImagePicker1.delegate = self
-        PhotoLibraryImagePicker1.sourceType = .photoLibrary
-        PhotoLibraryImagePicker1.allowsEditing = true
-        
-        self.present(PhotoLibraryImagePicker1, animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func cameraClick(_ sender: UIButton) {
-        
-        // Access Camera
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)) {
-            CameraImagePicker2 = UIImagePickerController()
-            
-            CameraImagePicker2.delegate = self
-            CameraImagePicker2.sourceType = .camera
-            CameraImagePicker2.cameraDevice = .rear
-            CameraImagePicker2.allowsEditing = false
-            
-            self.present(CameraImagePicker2, animated: true, completion: nil)
-    
-        } else {
-            print("Camera not found")
-        }
-    }
-    
-    // Implementing UIImagePickerControllerDelegate protocol methods
-    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if picker == PhotoLibraryImagePicker1 {
-            print("image info --> \(info)")
-            
-            let image1 = info [.editedImage] as! UIImage
-            iv1.image = image1
-            self.dismiss(animated: true, completion: nil)
-            
-        } else {
-            print("image info --> \(info)")
-            
-            let image2 = info [.originalImage] as! UIImage
-            iv1.image = image2
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
 }

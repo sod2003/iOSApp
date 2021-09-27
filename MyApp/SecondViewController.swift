@@ -9,17 +9,12 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet weak var iv2: UIImageView!
-    
-    var string1text: String!
-    var string2Image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "\(string1text ?? "Optional")"
-        iv2.image = string2Image
+        
     }
     
 

@@ -7,99 +7,56 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var pv1: UIPickerView!
     @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var iv1: UIImageView!
-    @IBOutlet weak var button1: UIButton!
     
-    var array1: [String] = []
-    var imageArray1: [String] = []
+    var component1Array: [String] = []
+    var component2Array: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView1.delegate = self
-        tableView1.dataSource = self
+        component1Array = ["One", "Two", "Three", "Four", "Five"]
         
-        array1 = ["Sean", "Tommy", "El Duderino", "Johnny 5"]
+        component2Array = ["Yellow", "Blue", "Green", "Orange"]
         
-        imageArray1 = ["lion.jpg"]
+        pv1.delegate = self
+        pv1.dataSource = self
         
     }
     
-    // TableView Protocol Methods Implementation
-    
-    // Number of Sections in TableView
-    func numberOfSections(in tableView: UITableView) -> Int {
+    // Number of components in PickerView
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
     
-    // Number of Rows per Section
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array1.count
-    }
-    
-    // Create the rows and display the data
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell = tableView.dequeueReusableCell(withIdentifier: "identifier1", for: indexPath)
-        
-        if indexPath.section == 0 {
-            tableCell.textLabel?.text = array1[indexPath.row]
-            tableCell.imageView?.image = UIImage(named: imageArray1[0])
-            tableCell.accessoryType = .detailDisclosureButton
+    // Number of rows in a component
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return component1Array.count
         } else {
-            tableCell.textLabel?.text = array1[indexPath.row] + " 2"
-            tableCell.imageView?.image = UIImage(named: imageArray1[0])
-            tableCell.accessoryType = .detailDisclosureButton
-        }
-        
-        return tableCell
-    }
-    
-    // Header title for Section
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Names"
-            
-        } else {
-            return "Names again"
+            return component2Array.count
         }
     }
     
-    // Footer title for Section
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "End"
+    // Display the information in rows
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return component1Array[row]
+        } else {
+            return component2Array[row]
+        }
     }
     
-    // Section Index Titles
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        let indexArray = ["One", "Two"]
-        return indexArray
-    }
-    
-    // Click a Table row
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        label1.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        iv1.image = UIImage(named: imageArray1[0])
-    }
-    
-    // Select Detail Disclosure Button
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        label1.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        iv1.image = UIImage(named: imageArray1[0])
-    }
-    @IBAction func clickButton(_ sender: UIButton) {
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextScreen = segue.destination as! SecondViewController
-        
-        nextScreen.string1text = label1.text
-        nextScreen.string2Image = iv1.image
+    // When user selects any row in a component
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            label1.text = component1Array[row]
+        } else {
+            label1.text = component2Array[row]
+        }
     }
 }

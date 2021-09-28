@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1437DC6627024492008F4EE9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1437DC6527024491008F4EE9 /* QuartzCore.framework */; };
+		14329E4C270350F800B4E9BA /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14329E4B270350F800B4E9BA /* AVKit.framework */; };
 		14817B8F26F3A51800AEA810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14817B8E26F3A51800AEA810 /* AppDelegate.swift */; };
 		14817B9126F3A51800AEA810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14817B9026F3A51800AEA810 /* SceneDelegate.swift */; };
 		14817B9326F3A51800AEA810 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14817B9226F3A51800AEA810 /* ViewController.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1437DC6527024491008F4EE9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		14329E4B270350F800B4E9BA /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		14817B8B26F3A51800AEA810 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14817B8E26F3A51800AEA810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14817B9026F3A51800AEA810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +37,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1437DC6627024492008F4EE9 /* QuartzCore.framework in Frameworks */,
+				14329E4C270350F800B4E9BA /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1437DC6427024491008F4EE9 /* Frameworks */ = {
+		14329E4A270350F800B4E9BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1437DC6527024491008F4EE9 /* QuartzCore.framework */,
+				14329E4B270350F800B4E9BA /* AVKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 			children = (
 				14817B8D26F3A51800AEA810 /* MyApp */,
 				14817B8C26F3A51800AEA810 /* Products */,
-				1437DC6427024491008F4EE9 /* Frameworks */,
+				14329E4A270350F800B4E9BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
